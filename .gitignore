@@ -39,3 +39,4 @@ jspm_packages
 # vscode IDE
 .vscode
 jsconfig.json
+typings*

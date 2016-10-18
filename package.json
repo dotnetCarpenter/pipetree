@@ -4,9 +4,10 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "pretest": "rollup --format cjs --input spec/integrationtest/getZip.js --output spec/integrationtest/getZip.bundle.js",
-    "test": "cat ./spec/fixtures/releases.json | ./spec/integrationtest/getZip.cjs.js"
+    "#pretest": "rollup --format cjs --input spec/integration/getZip.js --output spec/integration/getZip.bundle.js",
+    "test": "tap spec/*.js"
   },
+  "main": "lib/root.js",
   "dependencies": {
     "follow-redirects": "^0.2.0"
   },
