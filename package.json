@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "test": "tap spec/*.js"
+    "pretest": "rollup --format cjs --input spec/integrationtest/getZip.js --output spec/integrationtest/getZip.bundle.js",
+    "test": "cat ./spec/fixtures/releases.json | ./spec/integrationtest/getZip.cjs.js"
   },
   "dependencies": {
     "follow-redirects": "^0.2.0"
