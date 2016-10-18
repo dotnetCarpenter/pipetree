@@ -1,0 +1,16 @@
+{
+  "name": "pipetree",
+  "description": "Utility library to enable easy piping between nodejs programs and tree traversing of graphs",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "test": "tap spec/*.js"
+  },
+  "dependencies": {
+    "follow-redirects": "^0.2.0"
+  },
+  "devDependencies": {
+    "rollup": "^0.36.3",
+    "tap": "^7.1.2"
+  }
+}
