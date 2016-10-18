@@ -1,39 +1,36 @@
 #!/usr/bin/env node
 
-/// <reference path="../typings/globals/node/index.d.ts" />
+"use strict"
 
-'use strict'
-
-const Stream = require('stream')
-const select = require('./select')
-const listen = require('./listen')
+const select = require("./select")
+const listen = require("./listen")
 
 // map/filter functions
 const filters = {
 	tags								: data => data.tag_name,
 	name								: data => data.name,
 	id									: data => data.id,
-	browser_download_url: data => data['assets'][0]['browser_download_url'],
+	browser_download_url: data => data["assets"][0]["browser_download_url"],
 }
 
 // const getTags = filters.name
 //const getTags = filters.tags
-const getTags = select.querySelectorAll('tag_name')
-const getTag  = select.querySelector('tag_name')
+const getTags = select.querySelectorAll("tag_name")
+const getTag  = select.querySelector("tag_name")
 
 listen.start()
 select.use = () => {
-	console.time('arrayMap')
+	console.time("arrayMap")
 	const tagsA = listen.collectJSON().map(getTags)
-	console.timeEnd('arrayMap')
+	console.timeEnd("arrayMap")
 
-	console.time('querySelectorAll')
+	console.time("querySelectorAll")
 	const tags = getTags(listen.collectJSON())
-	console.timeEnd('querySelectorAll')
+	console.timeEnd("querySelectorAll")
 
-	console.time('querySelector')
+	console.time("querySelector")
 	const tag = getTag(listen.collectJSON())
-	console.timeEnd('querySelector')
+	console.timeEnd("querySelector")
 
 	console.log(tagsA)
 	console.log(tags)
