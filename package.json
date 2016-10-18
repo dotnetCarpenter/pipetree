@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "#pretest": "rollup --format cjs --input spec/integration/getZip.js --output spec/integration/getZip.bundle.js",
-    "test": "tap spec/*.js"
+    "test": "tap spec/*.js --coverage"
   },
   "main": "lib/root.js",
   "engines": {
