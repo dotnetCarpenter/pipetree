@@ -27,7 +27,7 @@ tap.test("select.breadthFirst && select.querySelectorAll", t => {
 	t.same(actual, expected, "should collect all occurances of 'tag_name'")
 
 	// this test is made because breadthFirstCollect never hits the last line
-	// 'return ret' for mysterious reasons
+	// 'return ret' if the JSON data has a depth above 1
 	expected = [ "v2.5.2" ]
 	actual = getTags(small)
 	t.same(actual, expected, "should collect all occurances of 'tag_name'")
@@ -47,7 +47,7 @@ tap.test("select.breadthFirst && select.querySelector", t => {
 	select.searchStrategy = select.breadthFirst
 	expected = "v2.5.2"
 	actual = getTag(latest)
-	t.same(actual, expected, "should find the first occurance of 'tag_name'")
+	t.same(actual, expected, "should find the first occurance of 'tag_name'")	
 })
 
 tap.test("select.deepFirst && select.querySelectorAll", t => {
