@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "test": "tap spec/*.js --coverage",
-    "test:unit": "tap !spec/integration.js spec/*.js"
+    "test:unit": "tap spec/listen.js spec/select.js"
   },
   "main": "lib/root.js",
   "bin": {
