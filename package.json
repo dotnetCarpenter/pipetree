@@ -18,5 +18,11 @@
   },
   "devDependencies": {
     "tap": "^7.1.2"
+  },
+  "nyc": {
+    "include": [
+      "lib",
+      "bin"
+    ]
   }
 }

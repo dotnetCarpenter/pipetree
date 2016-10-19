@@ -3,7 +3,7 @@
 "use strict"
 
 const select = require("../../lib/root").select
-const listen = require("../../lib/listen").listen
+const listen = require("../../lib/root").listen
 
 // get a function to traverse a tree - this one returns the first occurance
 // of the field "browser_download_url"
