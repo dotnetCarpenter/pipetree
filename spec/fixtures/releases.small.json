@@ -1,4 +1,4 @@
-[{
+{
 	"url": "https://api.github.com/repos/jasmine/jasmine/releases/4157608",
 	"assets_url": "https://api.github.com/repos/jasmine/jasmine/releases/4157608/assets",
 	"upload_url": "https://uploads.github.com/repos/jasmine/jasmine/releases/4157608/assets{?name,label}",
@@ -14,20 +14,4 @@
 	"tarball_url": "https://api.github.com/repos/jasmine/jasmine/tarball/v2.5.2",
 	"zipball_url": "https://api.github.com/repos/jasmine/jasmine/zipball/v2.5.2",
 	"body": "Please see the [release notes](https://github.com/jasmine/jasmine/blob/master/release_notes/2.5.2.md)"
-}, {
-	"url": "https://api.github.com/repos/jasmine/jasmine/releases/4075158",
-	"assets_url": "https://api.github.com/repos/jasmine/jasmine/releases/4075158/assets",
-	"upload_url": "https://uploads.github.com/repos/jasmine/jasmine/releases/4075158/assets{?name,label}",
-	"html_url": "https://github.com/jasmine/jasmine/releases/tag/v2.5.1",
-	"id": 4075158,
-	"tag_name": "v2.5.1",
-	"target_commitish": "master",
-	"name": "2.5.1",
-	"draft": false,
-	"prerelease": false,
-	"created_at": "2016-09-07T21:56:26Z",
-	"published_at": "2016-09-07T22:01:18Z",
-	"tarball_url": "https://api.github.com/repos/jasmine/jasmine/tarball/v2.5.1",
-	"zipball_url": "https://api.github.com/repos/jasmine/jasmine/zipball/v2.5.1",
-	"body": "Please see the [release notes](https://github.com/jasmine/jasmine/blob/master/release_notes/2.5.1.md)"
-}]
+}
