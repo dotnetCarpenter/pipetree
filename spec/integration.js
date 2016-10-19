@@ -11,11 +11,12 @@ tap.test("downloadUrl should", t => {
 		{ cwd: __dirname },
 		(error, stdout, stderr) => {
 
-		const expected 	= "https://github.com/jasmine/jasmine/releases/download/v2.5.2/jasmine-standalone-2.5.2.zip"
-		const actual		= stdout
+			const expected 	= "https://github.com/jasmine/jasmine/releases/download/v2.5.2/jasmine-standalone-2.5.2.zip"
+			const actual		= stdout
 
-		t.match(actual, expected, "return the first browser_download_url found")
-	})
+			t.match(actual, expected, "return the first browser_download_url found")
+		}
+	)
 })
 
 tap.test("lastVersion should", t => {
@@ -25,14 +26,11 @@ tap.test("lastVersion should", t => {
 		"cat ./fixtures/latestversion.json | node ./integration/lastVersion.js",
 		{ cwd: __dirname },
 		(error, stdout, stderr) => {
-		if (error) {
-			console.error(`exec error: ${error}`);
-			return;
+
+			const expected 	= "v2.5.2"
+			const actual		= stdout
+
+			t.match(actual, expected, "return the first tag_name found")
 		}
-
-		const expected 	= "v2.5.2"
-		const actual		= stdout
-
-		t.match(actual, expected, "return the first tag_name found")
-	})
+	)
 })
