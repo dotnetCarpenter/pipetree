@@ -8,7 +8,9 @@
     "test": "tap spec/*.js --coverage"
   },
   "main": "lib/root.js",
-  "bin": "bin/httpsget.js",
+  "bin": {
+    "httpsget": "bin/httpsget.js"
+  },
   "engines": {
     "node": ">=6"
   },
@@ -17,7 +19,8 @@
     "follow-redirects": "^0.2.0"
   },
   "devDependencies": {
-    "tap": "^7.1.2"
+    "tap": "^7.1.2",
+    "thenify": "^3.2.1"
   },
   "nyc": {
     "include": [

@@ -1,11 +1,11 @@
 # pipetree
 
 [![Build Status](https://travis-ci.org/dotnetCarpenter/pipetree.svg?branch=master)](https://travis-ci.org/dotnetCarpenter/pipetree)
-[![Build status](https://ci.appveyor.com/api/projects/status/yxqj4kad6trefnj0/branch/master?svg=true)](https://ci.appveyor.com/project/dotnetCarpenter/pipetree/branch/master)
+[![Build Status](https://ci.appveyor.com/api/projects/status/yxqj4kad6trefnj0/branch/master?svg=true)](https://ci.appveyor.com/project/dotnetCarpenter/pipetree/branch/master)
 [![Coverage Status](https://coveralls.io/repos/github/dotnetCarpenter/pipetree/badge.svg?branch=master)](https://coveralls.io/github/dotnetCarpenter/pipetree?branch=master)
-==============================================================================================================================================================================
 
-Utility library to enable easy piping between nodejs programs and tree traversing of graphs
+
+*Utility library to enable easy piping between nodejs programs and tree traversing of graphs*
 
 ```js
 const select = require("pipetree").select

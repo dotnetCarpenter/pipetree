@@ -11,6 +11,6 @@ tap.test("listen", t => {
 	let actual = listen
 	t.same(actual, expected, "listen is a shorthand for 'new Listen")
 
-
+	
 
 })

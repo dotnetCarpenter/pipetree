@@ -4,7 +4,7 @@
 
 const https		= require('follow-redirects').https
 const url			= require('url')
-const listen	= require('./listen')
+const listen	= require('../lib/root').listen
 
 function setup(parameters) {
 	const uri = url.parse(parameters)
