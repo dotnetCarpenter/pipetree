@@ -1,7 +1,5 @@
 "use strict"
 
-/// <reference path="../typings/index.d.ts" />
-
 const fs			= require("fs")
 const tap			= require("tap")
 const select	= require("../lib/root").select
