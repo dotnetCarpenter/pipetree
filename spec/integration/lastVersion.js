@@ -2,8 +2,8 @@
 
 "use strict"
 
-const select = require("./select")
-const listen = require("./listen")
+const select = require("../../lib/root").select
+const listen = require("../../lib/root").listen
 
 // map/filter functions
 const filters = {
@@ -24,19 +24,30 @@ select.use = () => {
 	const tagsA = listen.collectJSON().map(getTags)
 	console.timeEnd("arrayMap")
 
-	console.time("querySelectorAll")
-	const tags = getTags(listen.collectJSON())
-	console.timeEnd("querySelectorAll")
+	select.searchStrategy = select.breadthFirst
+	console.time("breadthFirstquerySelectorAll")
+	const btags = getTags(listen.collectJSON())
+	console.timeEnd("breadthFirstquerySelectorAll")
 
-	console.time("querySelector")
-	const tag = getTag(listen.collectJSON())
-	console.timeEnd("querySelector")
+	console.time("breadthFirstquerySelector")
+	const btag = getTag(listen.collectJSON())
+	console.timeEnd("breadthFirstquerySelector")
 
+	select.searchStrategy = select.deepFirst
+	console.time("deepFirstquerySelectorAll")
+	const dtags = getTags(listen.collectJSON())
+	console.timeEnd("deepFirstquerySelectorAll")
+
+	console.time("deepFirstquerySelector")
+	const dtag = getTag(listen.collectJSON())
+	console.timeEnd("deepFirstquerySelector")
+/*
 	console.log(tagsA)
-	console.log(tags)
-	console.log(tag)
-	
-
+	console.log(btags)
+	console.log(btag)
+	console.log(dtags)
+	console.log(dtag)
+*/
 	/*const readable = new Stream.Readable()
 	const buffer = new Buffer(tags)
 	readable.push(buffer)
