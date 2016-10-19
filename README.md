@@ -2,6 +2,26 @@
 
 Utility library to enable easy piping between nodejs programs and tree traversing of graphs
 
+```js
+const select = require("pipetree").select
+const listen = require("pipetree").listen
+
+// get a function to traverse a tree - this one returns the first occurance
+// of the field "browser_download_url"
+const getDownloadUrl = select.querySelector("browser_download_url")
+
+// use this function when the piped input is read
+select.use = () => {
+	// use the querySelector from select on the parsed JSON piped input
+	const downloadUrl = getDownloadUrl( listen.collectJSON() )
+	console.log(downloadUrl)
+}
+
+// attach select to handle the "listen" output when read
+select.start()
+// start listening for piped input
+listen.start()
+```
 
 # License
 MIT
