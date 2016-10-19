@@ -47,8 +47,7 @@ tap.test("Download jasmine.zip 2.5.2", t => {
     { cwd: __dirname }
   )
   const loadFixtureZipFile = readFile(
-    `./fixtures/jasmine.zip`,
-//    `${__dirname}/fixtures/jasmine.zip`,
+    `${__dirname}/fixtures/jasmine.zip`,
     { encoding: "utf8" }
   ).catch(t.threw)
 

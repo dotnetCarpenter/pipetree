@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "#pretest": "rollup --format cjs --input spec/integration/getZip.js --output spec/integration/getZip.bundle.js",
-    "test": "tap spec/*.js --coverage"
+    "test": "tap spec/*.js --coverage",
+    "test:unit": "tap !spec/integration.js spec/*.js"
   },
   "main": "lib/root.js",
   "bin": {
