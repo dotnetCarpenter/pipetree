@@ -9,10 +9,7 @@ const listen = require("../../lib/root").listen
 // of the field "browser_download_url"
 const getDownloadUrl = select.querySelector("browser_download_url")
 
-// start listening for piped input
-listen.start()
-
-// use this function when the piped input is read
+// use this anonymous function when the piped input is read
 select.use = () => {
 	// use the querySelector from select on the parsed JSON piped input
 	const downloadUrl = getDownloadUrl( listen.collectJSON() )
@@ -21,3 +18,5 @@ select.use = () => {
 
 // attach select to handle the "listen" output when read
 select.start()
+// start listening for piped input
+listen.start()
