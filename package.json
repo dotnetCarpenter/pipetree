@@ -8,6 +8,7 @@
     "test": "tap spec/*.js --coverage"
   },
   "main": "lib/root.js",
+  "bin": "bin/httpsget.js",
   "engines": {
     "node": ">=6"
   },

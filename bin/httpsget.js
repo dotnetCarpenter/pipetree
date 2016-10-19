@@ -13,7 +13,7 @@ function setup(parameters) {
 		path: uri.path, //'/repos/jasmine/jasmine/releases',
 		method: 'GET',
 		headers: {
-			'User-Agent': 'dotnetCarpenter',
+			'User-Agent': 'dotnetCarpenter/pipetree',
 			'Accept': 'application/vnd.github.v3+json'
 		}
 	}
