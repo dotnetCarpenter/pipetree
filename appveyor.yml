@@ -8,6 +8,8 @@ environment:
 install:
   # Get the latest stable version of nodejs
   - ps: Install-Product node $env:nodejs_version
+  # link pipetree so we can execute httpsget
+  - npm link
   # install modules
   - npm install
 
