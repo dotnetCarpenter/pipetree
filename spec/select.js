@@ -7,7 +7,7 @@ const tap			= require("tap")
 const select	= require("../lib/root").select
 
 const releases	= parseFile("releases.json")
-const latest		= parseFile("lastestversion.json")
+const latest		= parseFile("latestversion.json")
 const small			= parseFile("releases.small.json")
 
 function parseFile(filename) {
