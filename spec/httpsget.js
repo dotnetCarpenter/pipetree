@@ -7,14 +7,22 @@ const exec		= require("child_process").exec
 
 
 tap.test("httpsget report to stderr if an error happens", t => {
+	t.plan(1)
+
 	exec(
 		"httpsget https://this.url.is.invalid",
     (error, stdout, stderr) => {
+			
+			let expected = {
+				address: /\w+/,
+				code: /\w+/,
+				errno: /\w+/,
+				port: 443,
+				syscall: /\w+/
+			}
+			let actual = JSON.parse(stderr)
+      t.match(actual, expected, "clientError")
 
-      const expected 	= new Error
-      const actual		= error
-
-      t.match(actual, expected, "error is an instance of Error")
     }
   )
-})
+}, { diagnostic: true})

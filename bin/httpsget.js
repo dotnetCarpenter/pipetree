@@ -47,17 +47,16 @@ function setup(parameters) {
 			'Accept': 'application/vnd.github.v3+json'
 		}
 	}
-	const req = https.request(options, res => {
+	const req = https.get(options, res => {
 	/*	console.log('statusCode:', res.statusCode)
 		console.log('headers:', res.headers)*/
 
 		
 		res.pipe(process.stdout)
 	})
-	req.end()
 
 	req.on('error', (e) => {
-		res.pipe(process.stderr)
+		console.error(JSON.stringify(e))
 	})
 }
 
