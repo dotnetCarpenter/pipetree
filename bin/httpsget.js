@@ -15,7 +15,7 @@ const searchPattern = {
 	// <domain-prefix> must be //
 	// <domain> is at least one character and none of the reserved characters; space, :, /, ?, # or @
 	// <TLD> is not a space and at least one character
-	url: p => /^(?:\w+\:)?(?:\/{2})?[^\s\:\/\?#\[\]@]*?\.[^\s]+/.test(p)
+	url: p => /^(?:\w+\:)?(?:\/{2})?[^\s\:\/\?#\[\]@]+?\.\S+?$/.test(p)
 }
 
 main()
