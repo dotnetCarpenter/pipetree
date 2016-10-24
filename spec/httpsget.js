@@ -25,4 +25,4 @@ tap.test("httpsget report to stderr if an error happens", t => {
 
     }
   )
-}, { diagnostic: true})
+})
