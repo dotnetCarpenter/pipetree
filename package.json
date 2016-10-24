@@ -16,10 +16,10 @@
   },
   "repository": "https://github.com/dotnetCarpenter/pipetree.git",
   "dependencies": {
-    "follow-redirects": "^0.2.0"
+    "follow-redirects": "^1.0.0",
+    "url-parse-lax": "^1.0.0"
   },
   "devDependencies": {
-    "ecstatic": "^2.1.0",
     "tap": "^7.1.2",
     "thenify": "^3.2.1"
   },
