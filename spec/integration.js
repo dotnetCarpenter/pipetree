@@ -21,7 +21,7 @@ tap.test("downloadUrl should", t => {
       t.match(actual, expected, "return the first browser_download_url found")
     }
   )
-}, { diagnostic: true})
+})
 
 tap.test("lastVersion should", t => {
   t.plan(1)
@@ -45,11 +45,12 @@ tap.test("Download jasmine.zip 2.5.2", t => {
   const downloadProcess = exec(
     "httpsget https://api.github.com/repos/jasmine/jasmine/releases/4157608 | ./integration/downloadUrl.js | httpsget",
     { cwd: __dirname,
-      encoding: 'latin1' }
+      encoding: "latin1" }
   ).catch(t.threw)
   const loadFixtureZipFile = readFile(
     `${__dirname}/fixtures/jasmine.zip`,
-    { encoding: "latin1" }
+    { cwd: __dirname,
+      encoding: "latin1" }
   ).catch(t.threw)
 
   Promise.all([
@@ -58,7 +59,10 @@ tap.test("Download jasmine.zip 2.5.2", t => {
   ]).then(result => {
     const expected = result[1]
     const actual = result[0][0]
-    t.same(actual, expected, "as utf-8 string")
+    const error = result[0][1]
+    if(error) t.threw(error)
+    
+    t.same(actual, expected, "as buffer")
   }).catch(t.threw)
 
 })
