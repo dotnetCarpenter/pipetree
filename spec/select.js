@@ -32,7 +32,7 @@ tap.test("select.breadthFirst && select.querySelectorAll", t => {
 })
 
 tap.test("select.breadthFirst && select.querySelector", t => {
-	t.plan(2)
+	t.plan(3)
 
 	const getTag  = select.querySelector("tag_name")
 
@@ -45,7 +45,13 @@ tap.test("select.breadthFirst && select.querySelector", t => {
 	select.searchStrategy = select.breadthFirst
 	expected = "v2.5.2"
 	actual = getTag(latest)
-	t.same(actual, expected, "should find the first occurance of 'tag_name'")	
+	t.same(actual, expected, "should find the first occurance of 'tag_name'")
+
+	// this test is made because breadthFirst never gets to the last branch
+	// which is the case where we don't find anything
+	expected = undefined
+	actual = select.querySelector("foobar@NOTHERE")(small)
+	t.same(actual, expected, "should find nothing")
 })
 
 tap.test("select.deepFirst && select.querySelectorAll", t => {

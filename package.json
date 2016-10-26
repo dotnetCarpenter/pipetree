@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "test": "tap spec/*.js --coverage",
+    "test": "tap spec/*.js --100",
     "test:unit": "tap spec/listen.js spec/select.js"
   },
   "main": "lib/root.js",
@@ -20,7 +20,7 @@
     "url-parse-lax": "^1.0.0"
   },
   "devDependencies": {
-    "tap": "^7.1.2",
+    "tap": "^8.0.0",
     "thenify": "^3.2.1"
   },
   "nyc": {

@@ -12,7 +12,7 @@ tap.test("httpsget report to stderr if an error happens", t => {
 	exec(
 		"httpsget https://this.url.is.invalid",
     (error, stdout, stderr) => {
-			
+
 			let expected = {
 				address: /\w+/,
 				code: /\w+/,
@@ -21,6 +21,7 @@ tap.test("httpsget report to stderr if an error happens", t => {
 				syscall: /\w+/
 			}
 			let actual = JSON.parse(stderr)
+
       t.match(actual, expected, "clientError")
 
     }

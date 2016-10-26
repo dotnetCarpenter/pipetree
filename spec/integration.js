@@ -11,7 +11,7 @@ tap.test("downloadUrl should", t => {
   t.plan(1)
 
   exec(
-    "cat ./fixtures/releases.json | node ./integration/downloadUrl.js",
+    "node ./integration/cat.js ./fixtures/releases.json | node ./integration/downloadUrl.js",
     { cwd: __dirname },
     (error, stdout, stderr) => {
 
@@ -27,7 +27,7 @@ tap.test("lastVersion should", t => {
   t.plan(1)
 
   exec(
-    "cat ./fixtures/latestversion.json | node ./integration/lastVersion.js",
+    "node ./integration/cat.js ./fixtures/latestversion.json | node ./integration/lastVersion.js",
     { cwd: __dirname },
     (error, stdout, stderr) => {
 
@@ -62,7 +62,7 @@ tap.test("Download jasmine.zip 2.5.2", t => {
     const error = result[0][1]
     if(error) t.threw(error)
     
-    t.same(actual, expected, "as buffer")
+    t.same(actual, expected, "as latin1")
   }).catch(t.threw)
 
 })
