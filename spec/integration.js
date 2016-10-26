@@ -15,6 +15,8 @@ tap.test("downloadUrl should", t => {
     { cwd: __dirname },
     (error, stdout, stderr) => {
 
+      if(error) t.threw(error)
+
       const expected 	= "https://github.com/jasmine/jasmine/releases/download/v2.5.2/jasmine-standalone-2.5.2.zip"
       const actual		= stdout
 
@@ -30,6 +32,8 @@ tap.test("lastVersion should", t => {
     "node ./integration/cat.js ./fixtures/latestversion.json | node ./integration/lastVersion.js",
     { cwd: __dirname },
     (error, stdout, stderr) => {
+
+      if(error) t.threw(error)
 
       const expected 	= "v2.5.2"
       const actual		= stdout
@@ -61,7 +65,7 @@ tap.test("Download jasmine.zip 2.5.2", t => {
     const actual = result[0][0]
     const error = result[0][1]
     if(error) t.threw(error)
-    
+
     t.same(actual, expected, "as latin1")
   }).catch(t.threw)
 
