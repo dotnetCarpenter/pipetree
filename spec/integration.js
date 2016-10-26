@@ -10,7 +10,7 @@ const readFile      = thenify(fs.readFile.bind(fs))
 tap.test("downloadUrl should", t => {
   t.plan(1)
 
-  exec(
+  child_process.exec(
     "node ./integration/cat.js ./fixtures/releases.json | node ./integration/downloadUrl.js",
     { cwd: __dirname },
     (error, stdout, stderr) => {
@@ -28,7 +28,7 @@ tap.test("downloadUrl should", t => {
 tap.test("lastVersion should", t => {
   t.plan(1)
 
-  exec(
+  child_process.exec(
     "node ./integration/cat.js ./fixtures/latestversion.json | node ./integration/lastVersion.js",
     { cwd: __dirname },
     (error, stdout, stderr) => {
