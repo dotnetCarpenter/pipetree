@@ -11,7 +11,7 @@ tap.test("downloadUrl should", t => {
   t.plan(1)
 
   child_process.exec(
-    "node ./integration/cat.js ./fixtures/releases.json | node ./integration/downloadUrl.js",
+    "node integration/cat.js fixtures/releases.json | node integration/downloadUrl.js",
     { cwd: __dirname },
     (error, stdout, stderr) => {
 
@@ -29,7 +29,7 @@ tap.test("lastVersion should", t => {
   t.plan(1)
 
   child_process.exec(
-    "node ./integration/cat.js ./fixtures/latestversion.json | node ./integration/lastVersion.js",
+    "node integration/cat.js fixtures/latestversion.json | node integration/lastVersion.js",
     { cwd: __dirname },
     (error, stdout, stderr) => {
 
@@ -47,14 +47,14 @@ tap.test("Download jasmine.zip 2.5.2", t => {
   t.plan(1)
 
   const downloadProcess = exec(
-    "httpsget https://api.github.com/repos/jasmine/jasmine/releases/4157608 | ./integration/downloadUrl.js | httpsget",
+    "node ../bin/httpsget https://api.github.com/repos/jasmine/jasmine/releases/4157608 | node integration/downloadUrl.js | node ../bin/httpsget",
     { cwd: __dirname,
-      encoding: "latin1" }
+      encoding: 'latin1' }
   ).catch(t.threw)
   const loadFixtureZipFile = readFile(
     `${__dirname}/fixtures/jasmine.zip`,
     { cwd: __dirname,
-      encoding: "latin1" }
+      encoding: 'latin1' }
   ).catch(t.threw)
 
   Promise.all([
@@ -66,7 +66,7 @@ tap.test("Download jasmine.zip 2.5.2", t => {
     const error = result[0][1]
     if(error) t.threw(error)
 
-    t.same(actual, expected, "as latin1")
+    t.same(actual, expected, "as buffer")
   }).catch(t.threw)
 
 })
