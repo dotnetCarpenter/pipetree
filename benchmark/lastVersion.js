@@ -4,9 +4,11 @@
 
 /**
  * # How to run #
- * cat ../spec/fixtures/releases.json | ./lastVersion.js
+ * cat spec/fixtures/releases.json | benchmark/lastVersion.js
  * OR
  * ./run.sh
+ * OR on Windows
+ * node spec\integration\cat.js spec\fixtures\releases.json | node benchmark\lastVersion.js
  */
 
 const select = require("../lib/root").select
