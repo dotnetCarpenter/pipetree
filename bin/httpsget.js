@@ -3,7 +3,7 @@
 "use strict"
 
 const https			= require("follow-redirects").https
-var urlParseLax = require("url-parse-lax")
+const urlParseLax	= require("url-parse-lax")
 const listen		= require("../lib/root").listen
 
 const searchPattern = {
@@ -47,6 +47,7 @@ function get(parameters) {
 	})
 
 	req.on("error", (e) => {
+		e.url = uri
 		console.error(JSON.stringify(e))
 	})
 }

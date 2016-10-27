@@ -10,7 +10,8 @@ tap.test("httpsget report to stderr if an error happens", t => {
 	t.plan(1)
 
 	exec(
-		"httpsget https://this.url.is.invalid",
+		"node ../bin/httpsget https://this.url.is.invalid",
+		{ cwd: __dirname },
     (error, stdout, stderr) => {
 
 			let expected = {
