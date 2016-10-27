@@ -4,13 +4,15 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "test": "tap spec/*.js --100",
+    "#test_note": "nyc code coverage doesn't work on Windows @see github.com/npm/npm/issues/14444",
+    "test": "node config/isWindows.js && tap spec/*.js || tap spec/*.js --100",
     "test:unit": "tap spec/listen.js spec/select.js"
   },
   "main": "lib/root.js",
   "bin": {
     "httpsget": "bin/httpsget.js"
   },
+  "file": ["bin", "lib"],
   "engines": {
     "node": ">=6"
   },
