@@ -51,7 +51,7 @@ tap.test("select.breadthFirst && select.querySelector", t => {
 	// which is the case where we don't find anything
 	expected = undefined
 	actual = select.querySelector("foobar@NOTHERE")(small)
-	t.same(actual, expected, "should find nothing")
+	t.equal(actual, expected, "should find nothing")
 })
 
 tap.test("select.deepFirst && select.querySelectorAll", t => {
