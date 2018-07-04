@@ -43,7 +43,7 @@ tap.test("lastVersion should", t => {
   )
 })
 
-tap.test("Download jasmine.zip 2.5.2", t => {
+/*tap.test("Download jasmine.zip 2.5.2", t => {
   t.plan(1)
 
   const downloadProcess = exec(
@@ -69,4 +69,4 @@ tap.test("Download jasmine.zip 2.5.2", t => {
     t.same(actual, expected, "as buffer")
   }).catch(t.threw)
 
-})
+})*/
